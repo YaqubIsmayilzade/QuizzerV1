@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzer</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="main.js" defer></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+</head>
+
+<body class="flex  items-center justify-center bg-gray-100 h-[90vh] w-[100%] select-none">
+    <div
+        class="px-5 relative md:h-[82%] md:w-auto sm:w-[70%] w-[89%] h-[560px] md:aspect-4/6 rounded-2xl shadow-2xl bg-white [&>div]:w-[100%] [&>div]:border-2 [&>div]:rounded-lg [&>div]:h-[7vh] [&>div]:my-3 [&>div]:text-lg [&>div]:font-medium [&>div]:flex [&>div]:items-center [&_input]:m-4 [&_label]:h-[100%] [&_label]:w-[100%] [&_label]:flex [&_label]:items-center [&_label]:md:text-2xl">
+
+        <h1 id="questionNumber" class="text-3xl font-bold py-4 pb-2 w-[100%] md:text-[44px] border-b-2 border-dashed ">
+            Quizz 1
+        </h1>
+
+        <h1 id="question" class="text-[22px] font-medium py-3 pt-4 overflow-hidden md:text-3xl h-[120px]">
+            • What is the most spoken language in the world by native speakers?
+        </h1>
+
+        <div id="Answer-A">
+            <input type="radio" id="answer-Radio-A" name="Radio" onclick="checkAnswer('A')">
+            <label for="answer-Radio-A" id="answerA">English</label>
+        </div>
+
+        <div id="Answer-B">
+            <input type="radio" id="answer-Radio-B" name="Radio" onclick="checkAnswer('B')">
+            <label for="answer-Radio-B" id="answerB">Spanish</label>
+        </div>
+
+        <div id="Answer-C">
+            <input type="radio" id="answer-Radio-C" name="Radio" onclick="checkAnswer('C')">
+            <label for="answer-Radio-C" id="answerC">Hindi</label>
+        </div>
+
+        <div id="Answer-D" class="mb-12">
+            <input type="radio" id="answer-Radio-D" name="Radio" onclick="checkAnswer('D')">
+            <label for="answer-Radio-D" id="answerD">Mandarin Chinese</label>
+        </div>
+
+        <button id="previous" class=" absolute w-[55px] h-[55px] bg-gray-200 rounded-xl mt-2"
+            onclick="previousQuestion()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="28px" fill="black"
+                class="absolute top-1/2 left-1/2 translate-[-50%] translate-x-[-30%]">
+                <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+            </svg>
+        </button>
+
+        <button
+            class=" absolute text-[28px] text-gray-900 font-medium w-[71%] h-[55px] rounded-xl bg-green-500 ml-2 mt-2 right-4"
+            onclick="nextQuestion()">Next</button>
+    </div>
+</body>
+
+</html>
