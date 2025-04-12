@@ -15,13 +15,13 @@ const divAnswerD = document.getElementById("Answer-D");
 let quizArray = quizString.split("|");
 let currentQuestion;
 
-let questionCount = 0;
+let questionCount = localStorage.getItem("questionCount") || 0;
 
-setQuestion(0);
+setQuestion(questionCount);
 
 function setQuestion(questionNum) {
-  currentQuestion = quizArray[questionNum].split("*");
-  questionNumber.innerHTML = `Quizz ${questionNum + 1}`;
+  currentQuestion = quizArray[Number(questionNum)].split("*");
+  questionNumber.innerHTML = `Quizz ${Number(questionNum) + 1}`;
   question.innerHTML = currentQuestion[0];
 
   answerA.innerHTML = currentQuestion[1].slice(3);
@@ -32,6 +32,7 @@ function setQuestion(questionNum) {
 
 function nextQuestion() {
   questionCount++;
+  localStorage.setItem("questionCount", questionCount);
   if (questionCount < quizArray.length) {
     setQuestion(questionCount);
   } else {
